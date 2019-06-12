@@ -33,7 +33,252 @@
             </li>
           </ul>
         </div>
-        <div class="detail-right"></div>
+        <div class="detail-right" v-if="selectNum === 0">
+          <div class="detail-right-title">
+            <el-button type="primary">新增挂号</el-button>
+            <el-button type="primary">新增患者</el-button>
+          </div>
+          <div class="detail-right-table">
+            <el-table
+              :data="tableData"
+              style="width: 100%">
+              <el-table-column
+                prop="name"
+                label="姓名"
+                align='center'
+                width="65">
+              </el-table-column>
+              <el-table-column
+                prop="type"
+                label="病历号"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="gender"
+                label="性别|年龄"
+                align='center'
+                width="110">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="手机号"
+                align='center'
+                width="110">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="医生"
+                align='center'
+                width="70">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="类型"
+                align='center'
+                width="85">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="就诊事项"
+                align='center'
+                width="85">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="时间"
+                align='center'
+                width="85">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                align='center'
+                label="状态">
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+        <div class="detail-right" v-if="selectNum === 1">
+          <div class="detail-right-title">
+            <el-button type="primary">新增收费单</el-button>
+          </div>
+          <div class="detail-right-table">
+            <el-table
+              :data="tableData"
+              style="width: 100%">
+              <el-table-column
+                prop="name"
+                label="姓名"
+                align='center'
+                width="160">
+              </el-table-column>
+              <el-table-column
+                prop="type"
+                label="单号"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="gender"
+                label="医生"
+                align='center'
+                width="110">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="账单时间"
+                align='center'
+                width="200">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="账单金额"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                align='center'
+                label="操作">
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+        <div class="detail-right" v-if="selectNum === 2">
+          <div class="detail-right-title">
+            <el-button type="primary">新增收费单</el-button>
+          </div>
+          <div class="detail-right-table">
+            <el-table
+              :data="tableData"
+              style="width: 100%">
+              <el-table-column
+                prop="name"
+                label="姓名"
+                align='center'
+                width="160">
+              </el-table-column>
+              <el-table-column
+                prop="type"
+                label="单号"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="gender"
+                label="医生"
+                align='center'
+                width="110">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="收费时间"
+                align='center'
+                width="200">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="账单金额"
+                align='center'>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+        <div class="detail-right" v-if="selectNum === 3">
+          <div class="detail-right-title">
+            <el-button type="primary">新增充值</el-button>
+          </div>
+          <div class="detail-right-table">
+            <el-table
+              :data="tableData"
+              style="width: 100%">
+              <el-table-column
+                prop="name"
+                label="充值时间"
+                align='center'
+                width="200">
+              </el-table-column>
+              <el-table-column
+                prop="type"
+                label="单号"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="gender"
+                label="姓名"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="实充金额"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="赠送金额"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="支付方式"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="推荐人"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="状态"
+                align='center'>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+        <div class="detail-right" v-if="selectNum === 4">
+          <div class="detail-right-table">
+            <el-table
+              :data="tableData"
+              style="width: 100%">
+              <el-table-column
+                prop="name"
+                label="时间"
+                align='center'
+                width="200">
+              </el-table-column>
+              <el-table-column
+                prop="type"
+                label="操作人"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="gender"
+                label="账户"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="类别"
+                align='center'
+                width="100">
+              </el-table-column>
+              <el-table-column
+                prop="name"
+                label="金额"
+                align='center'>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -81,6 +326,8 @@ export default {
           name: '库存报警',
           num: 0
         }
+      ],
+      tableData: [
       ]
     }
   },
@@ -92,6 +339,7 @@ export default {
   },
   methods: {
     changeTab: function (name, index) {
+      console.log(index)
       this.selectNum = index
     }
   },
@@ -180,6 +428,10 @@ export default {
       .detail-right {
         float: right;
         width: calc(100% - 260px);
+        .detail-right-title {
+          padding: 10px;
+          text-align: right;
+        }
       }
     }
   }

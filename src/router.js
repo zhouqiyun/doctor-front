@@ -23,6 +23,14 @@ let router = new Router({
       }
     },
     {
+      path: '/resetpassword',
+      name: 'resetpassword',
+      component: resolve => require(['./views/resetpassword.vue'], resolve),
+      meta: {
+        title: '云诊所管理系统-注册'
+      }
+    },
+    {
       path: '',
       redirect: '/working/today',
       component: resolve => require(['./views/home.vue'], resolve),

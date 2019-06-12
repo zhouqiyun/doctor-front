@@ -1,12 +1,12 @@
 <template>
-  <div class="login">
+  <div class="register">
     <div class="register-logo">
       <img src="../assets/hospital-logo.png" alt="">
       <h3>口腔诊所</h3>
       <h6>做您贴心的口腔诊所管家</h6>
     </div>
     <div class="register-information">
-      <div class="title">登录</div>
+      <div class="title">重置密码</div>
       <div class="detail">
         <el-input
           placeholder="请输入手机号"
@@ -16,22 +16,32 @@
       </div>
       <div class="detail">
         <el-input
-          placeholder="密码"
+          placeholder="验证码"
           prefix-icon="el-icon-picture-outline"
           v-model="authCode">
         </el-input>
-        <span class="forget-password" @click="forgetPassword">忘记密码</span>
       </div>
-      <el-button @click="registerUser" :loading="registerLoading" class="login-btn" type="primary">登录</el-button>
-      <el-button @click="registerUser" :loading="registerLoading" class="register-btn" type="primary">注册</el-button>
+      <div class="detail">
+        <el-input
+          placeholder="短信验证"
+          prefix-icon="el-icon-chat-line-square"
+          v-model="messageCode">
+        </el-input>
+      </div>
+      <div class="detail">
+        <el-input
+          placeholder="密码长度至少六位"
+          prefix-icon="el-icon-mouse"
+          v-model="registerPassword">
+        </el-input>
+      </div>
+      <el-button @click="registerUser" :loading="registerLoading" class="register-btn" type="primary">重置密码</el-button>
     </div>
   </div>
 </template>
 <script>
-// import serverApi from '../utils/serverApi.js'
-import { mapGetters } from 'vuex'
 export default {
-  name: 'login',
+  name: 'register',
   data () {
     return {
       registerPhone: '',
@@ -47,40 +57,27 @@ export default {
   components: {
   },
   watch: {
-    username: {
-      handler: function (val, oldVal) {
-      },
-      immediate: true
-    }
   },
   computed: {
-    // 获取vuex里的值
-    ...mapGetters({
-      username: 'getUsername'
-    })
   },
   methods: {
     registerUser: function () {
       this.$router.push('/')
-    },
-    forgetPassword: function () {
-      this.$router.push('/resetpassword')
     }
   },
   created () {
-    // 修改vuex的值
-    this.$store.dispatch('updateUsername', '修改后的名字')
   },
   mounted () {
   }
 }
 </script>
 <style lang="less">
-.login {
+.register {
   width: 100%;
   height: 100%;
   background-color: #f7fafa;
   .register-logo {
+    padding-top: 60px;
     img {
       width: 50px;
       height: 50px;
@@ -118,30 +115,11 @@ export default {
         color: #409EFF;
         font-size: 16px;
       }
-      .forget-password {
-        position: relative;
-        left: 40%;
-        top: 0px;
-        color: #409EFF;
-        cursor: pointer;
-      }
-    }
-    .login-btn {
-      width: 80%;
-      margin: 0 auto;
-      border-radius: 20px;
-      margin-top: 20px;
     }
     .register-btn {
       width: 80%;
       margin: 20px auto;
       border-radius: 20px;
-      background-color: #fff;
-      color: #409EFF;
-      &:hover {
-        background-color: #409EFF;
-        color: #fff;
-      }
     }
   }
 }
