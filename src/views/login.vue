@@ -22,7 +22,7 @@
         </el-input>
         <span class="forget-password" @click="forgetPassword">忘记密码</span>
       </div>
-      <el-button @click="registerUser" :loading="registerLoading" class="login-btn" type="primary">登录</el-button>
+      <el-button @click="loginUser" :loading="registerLoading" class="login-btn" type="primary">登录</el-button>
       <el-button @click="registerUser" :loading="registerLoading" class="register-btn" type="primary">注册</el-button>
     </div>
   </div>
@@ -61,6 +61,9 @@ export default {
   },
   methods: {
     registerUser: function () {
+      this.$router.push('/register')
+    },
+    loginUser: function () {
       this.$router.push('/')
     },
     forgetPassword: function () {
